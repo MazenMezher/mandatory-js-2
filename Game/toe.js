@@ -21,14 +21,14 @@ $( document ).ready(function() {
         
         if (currentMove === 1 && e.target.innerHTML === "") {
             event.target.innerHTML = player1;
-            event.target.style.color="red";
+            event.target.style.color="rgba(170, 7, 7, 0.582)";
             currentMove++
         } else if (e.target.innerHTML === "") {
             event.target.innerHTML = player2;
-            event.target.style.color="yellow";
+            event.target.style.color="rgba(255, 217, 0, 0.637)";
             currentMove--;
         } else {
-            alert("Square already in use! pick another please");
+            alert("Square already in use! Please pick another!");
             
         }
         if(checkingForVictory()) {
@@ -84,8 +84,10 @@ $( document ).ready(function() {
     function declareWinner(winner) {
         victoryBox.css("display", "block");
         reset.css("display","block");
-        winner = winner === player1 ? "Congratulations" + "Player 1" : "Player 2"
-        victoryBox.html(alert(winner + " " + "Wins!"));
+        winner = winner === player1 ? "Congratulations " + "Player 1" : "Player 2"
+        victoryBox.html(alert(winner + " Wins!"));
         gameOver = true;
     }
+
+    
 });
