@@ -11,8 +11,12 @@ $( document ).ready(function() {
     let victoryBox = $(".winner");
     let reset = $(".reset");
 
+    let gameOver = false;
+
     box.on("click", function(e){
-        
+        if (gameOver === true){
+            return
+        }
         moves++;
         
         if (currentMove === 1 && e.target.innerHTML === "") {
@@ -74,13 +78,14 @@ $( document ).ready(function() {
         victoryBox.css("display","none");
         currentMove = 1;
         moves = 0;
-        
+        gameOver = false;
     })
 
     function declareWinner(winner) {
         victoryBox.css("display", "block");
         reset.css("display","block");
-        winner = winner === player1 ? "Mazin1" : "Mazin2"
-        victoryBox.html(winner + "Wins!");
+        winner = winner === player1 ? "Congratulations" + "Player 1" : "Player 2"
+        victoryBox.html(alert(winner + " " + "Wins!"));
+        gameOver = true;
     }
 });
