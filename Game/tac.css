@@ -48,6 +48,13 @@ h1 {
     background-color: rgb(8, 160, 84);
 }
 
+.reset {
+    border-radius: 5px;
+    background-color: rgb(31, 77, 214);
+    border-color: gold;
+    margin-top: 15px;
+}
+
 @keyframes bganimation{
     0%{
     background-position: 0% 50%;
