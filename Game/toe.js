@@ -12,7 +12,8 @@ $( document ).ready(function() {
     let reset = $(".reset");
 
     box.on("click", function(e){
-        moves++
+        
+        moves++;
 
         if (currentMove === 1) {
             event.target.innerHTML = player1;
@@ -23,7 +24,6 @@ $( document ).ready(function() {
             event.target.style.color="yellow";
             currentMove--;
         }
-        checkingForVictory()
         if(checkingForVictory()) {
             let theWinner = currentMove === 1 ?player2:player1;
             declareWinner(theWinner);
@@ -35,7 +35,7 @@ $( document ).ready(function() {
         actions.map((m) => {
             m.innerHTML = "";
         });
-        victoryBox.html("");
+        box.html("");
         victoryBox.css("display","none");
         currentMove = 1;
         moves = 0;
@@ -60,7 +60,7 @@ $( document ).ready(function() {
                 ]; 
             
                 return winningOptions.find(function(combo){
-                    if(results[combo[0]]!=="" && results[combo[1]]!=="" && results[combo[2]]!=="" && results[combo[1]] === results[combo[1]]){
+                    if(results[combo[0]]!=="" && results[combo[1]]!=="" && results[combo[2]]!=="" && results[combo[0]] === results[combo[1]] === results[combo[1]]){
                         return true;
                     } else {
                         return false;
