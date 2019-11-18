@@ -1,0 +1,60 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(125deg, #AE250F,#1E6818,#63760F,#8e44ad);
+    background-size: 400%;
+    animation: bganimation 15s infinite;
+}
+
+
+
+.flex-container {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: rgb(42, 44, 196);
+    font-size: 300%;
+    font-style: italic;
+}
+.Board-container {
+    height: 100%;
+    width: 100%;
+}
+.board {
+    width: 618px;
+}
+
+.square {
+    font-size: 140px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgb(6, 139, 50);
+    
+}
+
+.square:hover {
+    background-color: rgb(8, 160, 84);
+}
+
+@keyframes bganimation{
+    0%{
+    background-position: 0% 50%;
+    }
+    50%{
+    background-position: 100% 50%;
+    }
+    100%{
+    background-position: 0% 50%;
+    }
