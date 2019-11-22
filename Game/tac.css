@@ -27,10 +27,15 @@ h1 {
     color: rgba(235, 231, 16, 0.603);
     font-size: 300%;
     font-style: italic;
+    text-align: center;
 }
 h1:hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
     transition: 2s;
+}
+h3 {
+    color: rgba(235, 231, 16, 0.603);
+    text-align: center;
 }
 .Board-container {
     height: 100%;
@@ -49,6 +54,7 @@ h1:hover {
     border: 3px solid rgba(247, 243, 10, 0.267);
     
 }
+
 
 
 
@@ -95,7 +101,7 @@ iframe {
 }
 
 
-
+/* Code below is straight out of google not my own written background animation */
 .background-container{
     position: fixed;
     top: 0;

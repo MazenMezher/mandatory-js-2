@@ -6,7 +6,6 @@ $( document ).ready(function() {
 
     let currentMove = 1;
     let moves = 0;
-
     let box = $(".square");
     let victoryBox = $(".winner");
     let reset = $(".reset");
@@ -28,14 +27,17 @@ $( document ).ready(function() {
             event.target.style.color="rgba(255, 217, 0, 0.637)";
             currentMove--;
         } else {
-            alert("Square already in use! Please pick another!");
+            message("Square already in use! Please pick another!");
             
         }
         if(checkingForVictory()) {
             let theWinner = currentMove === 1 ? player2 : player1;
             declareWinner(theWinner);
             
-        }; 
+            
+        } else if ( moves === 9 && gameOver === false){
+            message("Its a Tie! Reset the game to play again")
+        } 
         
     });
 
@@ -69,25 +71,30 @@ $( document ).ready(function() {
     }
     }
 
+    function declareWinner(winner) {
+        victoryBox.css("display", "block");
+        reset.css("display","block");
+        winner = winner === player1 ? "Congratulations " + "X" : "Congratulations " + "O"
+        victoryBox.html(message(winner + " Wins!"));
+        gameOver = true;
+    }
+
     reset.on("click",function(e){
         let actions = Array.prototype.slice.call($("square"));
         actions.map((m) => {
             m.innerHTML = "";
         });
+        message("");
         box.html("");
         victoryBox.css("display","none");
         currentMove = 1;
         moves = 0;
         gameOver = false;
+
     })
 
-    function declareWinner(winner) {
-        victoryBox.css("display", "block");
-        reset.css("display","block");
-        winner = winner === player1 ? "Congratulations " + "Player 1" : "Player 2"
-        victoryBox.html(alert(winner + " Wins!"));
-        gameOver = true;
+    function message(msg){
+        document.getElementById("msg").innerHTML= msg;
     }
-
     
 });
